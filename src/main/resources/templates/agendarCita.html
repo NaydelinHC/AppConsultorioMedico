@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Citas</title>
+</head>
+<body>
+<h1>Agendar Cita</h1>
+
+<!-- Mostrar mensaje si está presente -->
+<div th:if="${mensaje}" th:text="${mensaje}"></div>
+
+<form action="/api/citas/agendar" method="post">
+    <label for="doctorId">ID del Doctor:</label>
+    <input type="number" id="doctorId" name="doctorId" required><br><br>
+
+    <label for="consultorioId">ID del Consultorio:</label>
+    <input type="number" id="consultorioId" name="consultorioId" required><br><br>
+
+    <label for="horario">Horario:</label>
+    <input type="datetime-local" id="horario" name="horario" required><br><br>
+
+    <label for="nombrePaciente">Nombre del Paciente:</label>
+    <input type="text" id="nombrePaciente" name="nombrePaciente" required><br><br>
+
+    <button type="submit">Agendar Cita</button>
+</form>
+</body>
+</html>
